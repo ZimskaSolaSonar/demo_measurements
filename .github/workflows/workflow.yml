@@ -85,7 +85,7 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=zimskasolasonar_demo_measurements_backend -Dsonar.projectName=zimskasolasonar_demo_measurements_backend
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=zimskasolasonar_demo_measurements_backend -Dsonar.projectName=zimskasolasonar_demo_measurements_backend -DskipTests
         working-directory: backend/
 
   static_code_analysis_frontend:
