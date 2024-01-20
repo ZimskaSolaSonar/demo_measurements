@@ -24,7 +24,7 @@ public class AddTestData {
         VertxContextSupport.subscribeAndAwait(() ->
             Panache.withTransaction(() -> {
                 Product p1 = new Product();
-                p1.setName("Milka Classic");
+                p1.setName("Milka Strawberry");
                 p1.setMinMeasure(-5.0);
                 p1.setMaxMeasure(18.0);
 
