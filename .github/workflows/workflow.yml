@@ -95,8 +95,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          working-directory: frontend
-          fetch-depth: 0
+          projectBaseDir: frontend
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
