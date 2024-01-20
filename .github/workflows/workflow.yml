@@ -60,7 +60,7 @@ jobs:
         env:
           POSTGRES_DB: measdb
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
-          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD=password }}
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -68,7 +68,7 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
-          
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -79,7 +79,7 @@ jobs:
             distribution: 'adopt'
             java-version: '20'
             cache: maven
-            
+
       - name: Start backend
         run: |
          ./mvnw quarkus:dev &
@@ -100,11 +100,11 @@ jobs:
           node-version: 18
           cache: 'npm'
           cache-dependency-path: frontend/package-lock.json
-  
+
       - name: Install dependencies
         run: npm ci
         working-directory: frontend
-        
+
       - name: Start frontend
         run: npm run start &
         working-directory: frontend
