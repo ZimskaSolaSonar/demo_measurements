@@ -85,7 +85,7 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=zimskasolasonar_demo_measurements_backend -Dsonar.projectName=zimskasolasonar_demo_measurements_backend -DskipTests
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=zimskasolasonar_demo_measurements_backend -Dsonar.projectName=zimskasolasonar_demo_measurements_backend -DskipTests -Dsonar.qualitygate.wait=true
         working-directory: backend/
 
   static_code_analysis_frontend:
@@ -115,5 +115,11 @@ jobs:
         with:
           projectBaseDir: frontend/
 
+      - name: SonarQube Quality Gate check
+        id: sonarqube-quality-gate-check
+        uses: sonarsource/sonarq
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
       - name: "SonarQube Quality Gate Status value"
-        run: echo "The Quality Gate status for frontend is ${{ sonarsource/sonarqube-quality-gate-action@master }}"
+        run: echo "The Quality Gate status for frontend is ${{ steps.sonarqube-quality-gate-check.outputs.quality-gate-status }}"
