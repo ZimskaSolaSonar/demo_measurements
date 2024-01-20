@@ -116,5 +116,11 @@ jobs:
         with:
           projectBaseDir: frontend/
 
+      - name: SonarCloud Quality Gate check
+        id: sonarcloud-quality-gate-check
+        uses: SonarSource/sonarcloud-qualiy-gate-action@master
+        env:
+           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FE }}
+
       - name: "SonarCloud Quality Gate Status value"
-        run: echo "The Quality Gate status for frontend is ${{ steps.sonarcloud-quality-check.outputs.quality-gate-status }}"
+        run: echo "The Quality Gate status for frontend is ${{ steps.sonarcloud-quality-gate-check.outputs.quality-gate-status }}"
