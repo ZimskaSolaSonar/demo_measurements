@@ -95,7 +95,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          projectBaseDir: frontend
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -115,3 +115,4 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FE }}
         with:
           args: '-Dsonar.projectKey=ii-zimskasola2024_measurments-frontend'
+          projectBaseDir: frontend
