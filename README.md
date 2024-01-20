@@ -9,6 +9,7 @@ A demo on winter school 2024@UM/FERI:
   - Quality Gate automation
   - Functional test automation
   - Containerized Deployment to a Cloud environment
+- SonarCloud
 
 ## Scope (Backend + Frontend + CLI)
 - App stores **Products** (id / name / min allowed temperature / max allowed termperature) in DB;
