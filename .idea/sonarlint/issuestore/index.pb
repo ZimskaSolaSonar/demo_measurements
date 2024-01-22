@@ -43,3 +43,9 @@ w
 G.idea/sonarlint/issuestore/a/5/a5af269aff4ed66e52c6b268d1c25ddf0116617b,1/0/1024073da6c3baf7d32ca503e0813f0ee822e111
 w
 G.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,b/4/b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3
+H
+sonar-project.properties,2/5/2538046035efb77ecc44e1fd2eec1e2641594d4c
+J
+frontend/src/setupTests.js,7/3/73d6ccd1abf2bb05a47e15c443fb0e32314ec163
+E
+frontend/src/index.js,0/9/09a4e53ab0e5e7637fd01136f19a9bb570e1ef2d
