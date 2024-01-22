@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 @Produces(MediaType.APPLICATION_JSON)
 public class MeasurementHistoryController {
 
-    private static final Logger log = Logger.getLogger(MeasurementController.class.toString());
 
     @Inject
     MeasurementRepository measurementRepository;
